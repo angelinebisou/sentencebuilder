@@ -1,0 +1,12 @@
+{
+  "name": "sentencebuilder",
+  "version": "0.1.0",
+  "description": "English Sentence Builder Playground (static site)",
+  "main": "sentencebuilder/index.html",
+  "scripts": {
+    "start": "npx http-server -c-1 sentencebuilder -p 8080"
+  },
+  "keywords": ["education", "english", "interactive"],
+  "author": "",
+  "license": "MIT"
+}

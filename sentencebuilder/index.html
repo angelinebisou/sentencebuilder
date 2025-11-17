@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>英語造句樂園 English Sentence Builder Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo-area">
+        <div class="logo-title">英語造句樂園 · English Sentence Builder Playground</div>
+        <div class="logo-subtitle">🎯 be going to 句型 · 視覺化＋互動式學習</div>
+      </div>
+      <div class="nav-buttons">
+        <button class="nav-button active" data-target="home">
+          <span class="emoji">🏠</span>
+          <span>首頁</span>
+        </button>
+        <button class="nav-button" data-target="level1">
+          <span class="emoji">①</span>
+          <span>關卡一：單數主詞</span>
+        </button>
+        <button class="nav-button" data-target="level2">
+          <span class="emoji">②</span>
+          <span>關卡二：複數主詞</span>
+        </button>
+        <button class="nav-button" data-target="listening">
+          <span class="emoji">🎧</span>
+          <span>聽力挑戰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========= Home ========= -->
+    <section id="home" class="active">
+      <div class="panel">
+        <div class="panel-title-row">
+          <h2>歡迎來到英語造句樂園 ✨</h2>
+          <div class="tag">
+            <span class="tag-dot" style="background:#4cd964"></span>
+            <span>Step by Step · 自學友善</span>
+          </div>
+        </div>
+        <p style="font-size:0.95rem;">
+          透過顏色＋拖拉＋語音＋遊戲化設計，引導學生掌握
+          <strong>be going to</strong> 句型：
+          <span class="pill">主詞</span>＋<span class="pill">動詞</span>＋<span class="pill">to</span>＋<span class="pill">地點</span>＋<span class="pill">標點</span>
+        </p>
+        <div class="color-legend">
+          <div class="legend-item">
+            <span class="legend-dot" style="background:var(--subject-color)"></span>
+            <span>主詞 Subject</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background:var(--verb-color)"></span>
+            <span>動詞 be going</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background:var(--prep-color)"></span>
+            <span>介詞 to</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background:var(--place-color)"></span>
+            <span>地點 Place</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background:var(--punct-color)"></span>
+            <span>標點 Punctuation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-grid">
+        <div class="home-card">
+          <div class="home-card-title">
+            <span class="emoji">①</span>
+            <span>關卡一：單數主詞練習</span>
+          </div>
+          <div class="muted">
+            I / You / He / She + am / are / is going to + 地點
+          </div>
+          <button class="secondary-btn mt-sm" data-target="level1">
+            ▶ 進入關卡一
+          </button>
+        </div>
+
+        <div class="home-card">
+          <div class="home-card-title">
+            <span class="emoji">②</span>
+            <span>關卡二：複數主詞練習</span>
+          </div>
+          <div class="muted">
+            We / You / They + are going to + 地點<br />
+            完成關卡一後解鎖。
+          </div>
+          <div class="mt-sm">
+            <button class="secondary-btn" data-target="level2">
+              ▶ 進入關卡二
+            </button>
+            <span id="level2-lock-label" class="pill-small">目前：鎖定中 🔒</span>
+          </div>
+        </div>
+
+        <div class="home-card">
+          <div class="home-card-title">
+            <span class="emoji">🎧</span>
+            <span>聽力挑戰：10 題小測驗</span>
+          </div>
+          <div class="muted">
+            聽句子 → 選正確句子，練聽力＋造句概念。
+          </div>
+          <button class="secondary-btn mt-sm" data-target="listening">
+            ▶ 開始聽力挑戰
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Level 1 ========= -->
+    <section id="level1">
+      <div class="panel">
+        <div class="panel-title-row">
+          <h2>關卡一：單數主詞 · I / You / He / She</h2>
+          <div class="tag">
+            <span class="tag-dot" style="background:var(--primary-blue)"></span>
+            <span>目標：會說完整句子</span>
+          </div>
+        </div>
+        <p class="muted">
+          拖拉單字，完成句型：
+          <strong>[主詞] + [be going] + [to] + [地點] + [標點]</strong>
+        </p>
+        <div class="builder-layout mt-sm">
+          <!-- Word Bank Level 1 -->
+          <div class="word-bank" data-level="1">
+            <div class="word-bank-title">
+              🧱 單字銀行 · 拖拉到右邊造句
+            </div>
+            <div class="word-bank-row">
+              <span class="pill">主詞 🟠</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="subject" data-value="I">
+                I
+              </div>
+              <div class="word-card" draggable="true" data-role="subject" data-value="You">
+                You
+              </div>
+              <div class="word-card" draggable="true" data-role="subject" data-value="He">
+                He
+              </div>
+              <div class="word-card" draggable="true" data-role="subject" data-value="She">
+                She
+              </div>
+            </div>
+
+            <div class="word-bank-row mt-xs">
+              <span class="pill">動詞 🟡 be going</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="verb" data-value="am going">
+                am going
+              </div>
+              <div class="word-card" draggable="true" data-role="verb" data-value="are going">
+                are going
+              </div>
+              <div class="word-card" draggable="true" data-role="verb" data-value="is going">
+                is going
+              </div>
+            </div>
+
+            <div class="word-bank-row mt-xs">
+              <span class="pill">介詞 🟢</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="prep" data-value="to">
+                to
+              </div>
+            </div>
+
+            <div class="word-bank-row mt-xs">
+              <span class="pill">地點 🔵</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="place" data-value="the bank">
+                <span class="word-emoji">🏦</span> the bank
+              </div>
+              <div class="word-card" draggable="true" data-role="place" data-value="the hospital">
+                <span class="word-emoji">🏥</span> the hospital
+              </div>
+              <div class="word-card" draggable="true" data-role="place" data-value="the museum">
+                <span class="word-emoji">🏛️</span> the museum
+              </div>
+              <div class="word-card" draggable="true" data-role="place" data-value="the post office">
+                <span class="word-emoji">📮</span> the post office
+              </div>
+            </div>
+
+            <div class="word-bank-row mt-xs">
+              <span class="pill">標點 🔴</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="punct" data-value=".">
+                .
+              </div>
+              <div class="word-card" draggable="true" data-role="punct" data-value="?">
+                ?
+              </div>
+            </div>
+          </div>
+
+          <!-- Sentence Panel Level 1 -->
+          <div class="sentence-panel" id="sentence-panel-level1">
+            <div class="sentence-slots" data-level="1">
+              <div
+                class="slot"
+                data-role="subject"
+                data-label="主詞 Subject"
+                data-level="1"
+              >
+                <span class="slot-placeholder">🟠 主詞</span>
+              </div>
+              <div
+                class="slot"
+                data-role="verb"
+                data-label="動詞 be going"
+                data-level="1"
+              >
+                <span class="slot-placeholder">🟡 be going</span>
+              </div>
+              <div
+                class="slot"
+                data-role="prep"
+                data-label="介詞 to"
+                data-level="1"
+              >
+                <span class="slot-placeholder">🟢 to</span>
+              </div>
+              <div
+                class="slot"
+                data-role="place"
+                data-label="地點 Place"
+                data-level="1"
+              >
+                <span class="slot-placeholder">🔵 地點</span>
+              </div>
+              <div
+                class="slot"
+                data-role="punct"
+                data-label="標點 . / ?"
+                data-level="1"
+              >
+                <span class="slot-placeholder">🔴 . / ?</span>
+              </div>
+            </div>
+
+            <div class="sentence-display" id="sentence-display-level1"></div>
+
+            <div class="sentence-controls">
+              <button
+                class="secondary-btn"
+                onclick="playCurrentSentence('level1', 1, 1)"
+              >
+                🔊 播放句子
+              </button>
+              <button
+                class="ghost-btn"
+                onclick="playCurrentSentence('level1', 1, 0.7)"
+              >
+                🐢 慢速播放
+              </button>
+              <button
+                class="ghost-btn"
+                onclick="playWordByWord('level1')"
+              >
+                🔤 逐字播放
+              </button>
+              <button
+                class="primary-btn"
+                onclick="checkSentence('level1')"
+              >
+                ✅ 檢查答案
+              </button>
+              <button
+                class="ghost-btn"
+                onclick="resetSentence('level1')"
+              >
+                🔄 重新開始
+              </button>
+            </div>
+
+            <div class="feedback" id="feedback-level1"></div>
+            <div
+              class="feedback-structure"
+              id="feedback-structure-level1"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Level 2 ========= -->
+    <section id="level2">
+      <div class="panel">
+        <div class="panel-title-row">
+          <h2>關卡二：複數主詞 · We / You / They</h2>
+          <div class="tag">
+            <span class="tag-dot" style="background:var(--primary-green)"></span>
+            <span>目標：流暢使用 are going to</span>
+          </div>
+        </div>
+        <p class="muted">
+          完成關卡一後解鎖。句型：
+          <strong>[主詞] + are going + to + [地點] + [標點]</strong>
+        </p>
+
+        <div id="level2-locked-message" class="panel" style="padding:0.7rem; margin-top:0.7rem;">
+          🔒 關卡二尚未解鎖：請先在「關卡一」完成 3 句正確造句。
+        </div>
+
+        <div class="builder-layout mt-sm" id="level2-builder" style="display:none;">
+          <!-- Word Bank Level 2 -->
+          <div class="word-bank" data-level="2">
+            <div class="word-bank-title">
+              🧱 單字銀行 · 拖拉到右邊造句
+            </div>
+            <div class="word-bank-row">
+              <span class="pill">主詞 🟠</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="subject" data-value="We">
+                We
+              </div>
+              <div class="word-card" draggable="true" data-role="subject" data-value="You">
+                You
+              </div>
+              <div class="word-card" draggable="true" data-role="subject" data-value="They">
+                They
+              </div>
+            </div>
+
+            <div class="word-bank-row mt-xs">
+              <span class="pill">動詞 🟡 are going</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="verb" data-value="are going">
+                are going
+              </div>
+            </div>
+
+            <div class="word-bank-row mt-xs">
+              <span class="pill">介詞 🟢</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="prep" data-value="to">
+                to
+              </div>
+            </div>
+
+            <div class="word-bank-row mt-xs">
+              <span class="pill">地點 🔵</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="place" data-value="the bookstore">
+                <span class="word-emoji">📚</span> the bookstore
+              </div>
+              <div class="word-card" draggable="true" data-role="place" data-value="the library">
+                <span class="word-emoji">📖</span> the library
+              </div>
+              <div class="word-card" draggable="true" data-role="place" data-value="the park">
+                <span class="word-emoji">🌳</span> the park
+              </div>
+              <div class="word-card" draggable="true" data-role="place" data-value="the supermarket">
+                <span class="word-emoji">🛒</span> the supermarket
+              </div>
+            </div>
+
+            <div class="word-bank-row mt-xs">
+              <span class="pill">標點 🔴</span>
+            </div>
+            <div class="word-bank-row">
+              <div class="word-card" draggable="true" data-role="punct" data-value=".">
+                .
+              </div>
+              <div class="word-card" draggable="true" data-role="punct" data-value="?">
+                ?
+              </div>
+            </div>
+          </div>
+
+          <!-- Sentence Panel Level 2 -->
+          <div class="sentence-panel" id="sentence-panel-level2">
+            <div class="sentence-slots" data-level="2">
+              <div
+                class="slot"
+                data-role="subject"
+                data-label="主詞 Subject"
+                data-level="2"
+              >
+                <span class="slot-placeholder">🟠 主詞</span>
+              </div>
+              <div
+                class="slot"
+                data-role="verb"
+                data-label="動詞 are going"
+                data-level="2"
+              >
+                <span class="slot-placeholder">🟡 are going</span>
+              </div>
+              <div
+                class="slot"
+                data-role="prep"
+                data-label="介詞 to"
+                data-level="2"
+              >
+                <span class="slot-placeholder">🟢 to</span>
+              </div>
+              <div
+                class="slot"
+                data-role="place"
+                data-label="地點 Place"
+                data-level="2"
+              >
+                <span class="slot-placeholder">🔵 地點</span>
+              </div>
+              <div
+                class="slot"
+                data-role="punct"
+                data-label="標點 . / ?"
+                data-level="2"
+              >
+                <span class="slot-placeholder">🔴 . / ?</span>
+              </div>
+            </div>
+
+            <div class="sentence-display" id="sentence-display-level2"></div>
+
+            <div class="sentence-controls">
+              <button
+                class="secondary-btn"
+                onclick="playCurrentSentence('level2', 2, 1)"
+              >
+                🔊 播放句子
+              </button>
+              <button
+                class="ghost-btn"
+                onclick="playCurrentSentence('level2', 2, 0.7)"
+              >
+                🐢 慢速播放
+              </button>
+              <button
+                class="ghost-btn"
+                onclick="playWordByWord('level2')"
+              >
+                🔤 逐字播放
+              </button>
+              <button
+                class="primary-btn"
+                onclick="checkSentence('level2')"
+              >
+                ✅ 檢查答案
+              </button>
+              <button
+                class="ghost-btn"
+                onclick="resetSentence('level2')"
+              >
+                🔄 重新開始
+              </button>
+            </div>
+
+            <div class="feedback" id="feedback-level2"></div>
+            <div
+              class="feedback-structure"
+              id="feedback-structure-level2"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Listening Challenge ========= -->
+    <section id="listening">
+      <div class="panel">
+        <div class="panel-title-row">
+          <h2>🎧 聽力挑戰 · 10 題</h2>
+          <div class="tag">
+            <span class="tag-dot" style="background:#ffcc00"></span>
+            <span>目標：聽懂並選出正確句子</span>
+          </div>
+        </div>
+
+        <div class="listening-layout" id="listening-quiz">
+          <div class="question-info">
+            <div class="question-counter" id="question-counter">
+              題目 1 / 10
+            </div>
+            <div class="score-pill" id="score-pill">得分：0</div>
+          </div>
+
+          <div class="actions-row">
+            <button
+              class="secondary-btn"
+              onclick="playCurrentListeningSentence()"
+            >
+              🔊 播放句子
+            </button>
+            <button
+              class="ghost-btn"
+              onclick="playCurrentListeningSentence(0.7)"
+            >
+              🐢 慢速播放
+            </button>
+          </div>
+
+          <div class="options-grid" id="options-grid"></div>
+
+          <div class="actions-row">
+            <button class="primary-btn" onclick="checkListeningAnswer()">
+              ✅ 檢查答案
+            </button>
+            <button class="ghost-btn" onclick="goToNextQuestion()">
+              ➡️ 下一題
+            </button>
+          </div>
+
+          <div class="feedback" id="feedback-listening"></div>
+        </div>
+
+        <div
+          id="listening-result"
+          class="result-panel"
+          style="display:none;"
+        >
+          <h3>挑戰結果 🎉</h3>
+          <p id="listening-summary"></p>
+          <div id="wrong-review" style="display:none;">
+            <div class="mt-sm">
+              <strong>🔊 錯題回顧：</strong>
+            </div>
+            <div class="wrong-list" id="wrong-list"></div>
+          </div>
+          <div class="actions-row mt-sm">
+            <button class="secondary-btn" onclick="restartListeningQuiz()">
+              🔄 重新挑戰
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // ========= Data & State =========
+    // 注意：已把 grammarRules、levelConfig、listeningQuestions 抽到同目錄的 config.js
+    // 請確保 <script src="config.js"></script> 已在 HTML 中載入。
+    let level1CorrectCount = 0;
+    let level2Unlocked = false;
+
+    let currentQuestionIndex = 0;
+    let listeningScore = 0;
+    let wrongQuestions = [];
+
+    // ========= Navigation =========
+    function showSection(sectionId) {
+      document.querySelectorAll("section").forEach((sec) => {
+        sec.classList.toggle("active", sec.id === sectionId);
+      });
+      document.querySelectorAll(".nav-button").forEach((btn) => {
+        btn.classList.toggle(
+          "active",
+          btn.getAttribute("data-target") === sectionId
+        );
+      });
+
+      if (sectionId === "level2") {
+        updateLevel2LockState();
+      }
+      if (sectionId === "listening") {
+        // no-op; quiz already initialised on load
+      }
+    }
+
+    document.querySelectorAll(".nav-button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-target");
+        showSection(target);
+      });
+    });
+
+    // Also allow "首頁卡片" 的按鈕直接切換
+    document.querySelectorAll(
+      'button[data-target="level1"], button[data-target="level2"], button[data-target="listening"]'
+    ).forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-target");
+        showSection(target);
+      });
+    });
+
+    // ========= Drag & Drop =========
+    function setupDraggableWords() {
+      document.querySelectorAll(".word-card").forEach((card) => {
+        card.addEventListener("dragstart", (e) => {
+          e.dataTransfer.effectAllowed = "move";
+          const payload = JSON.stringify({
+            value: card.getAttribute("data-value"),
+            role: card.getAttribute("data-role"),
+          });
+          e.dataTransfer.setData("text/plain", payload);
+        });
+      });
+
+      document.querySelectorAll(".slot").forEach((slot) => {
+        slot.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          slot.classList.add("drag-over");
+        });
+
+        slot.addEventListener("dragleave", () => {
+          slot.classList.remove("drag-over");
+        });
+
+        slot.addEventListener("drop", (e) => {
+          e.preventDefault();
+          slot.classList.remove("drag-over");
+          const text = e.dataTransfer.getData("text/plain");
+          if (!text) return;
+          let data;
+          try {
+            data = JSON.parse(text);
+          } catch {
+            return;
+          }
+          // Optional: allow any role to drop; correctness is handled on check
+          fillSlotWithValue(slot, data.value);
+          slot.dataset.value = data.value;
+          slot.classList.add("filled");
+        });
+      });
+    }
+
+    function fillSlotWithValue(slot, value) {
+      const placeholder = slot.querySelector(".slot-placeholder");
+      if (placeholder) {
+        placeholder.textContent = value;
+      } else {
+        slot.textContent = value;
+      }
+    }
+
+    function resetSentence(levelKey) {
+      const levelNumber = levelConfig[levelKey].levelNumber;
+      const slots = document.querySelectorAll(
+        `.sentence-slots[data-level="${levelNumber}"] .slot`
+      );
+      slots.forEach((slot) => {
+        slot.dataset.value = "";
+        slot.classList.remove("filled", "error", "success-glow");
+        const role = slot.getAttribute("data-role");
+        const placeholder = slot.querySelector(".slot-placeholder");
+        if (placeholder) {
+          if (role === "subject") placeholder.textContent = "🟠 主詞";
+          if (role === "verb")
+            placeholder.textContent =
+              levelKey === "level1" ? "🟡 be going" : "🟡 are going";
+          if (role === "prep") placeholder.textContent = "🟢 to";
+          if (role === "place") placeholder.textContent = "🔵 地點";
+          if (role === "punct") placeholder.textContent = "🔴 . / ?";
+        }
+      });
+
+      const feedback = document.getElementById(`feedback-${levelKey}`);
+      const feedbackStructure = document.getElementById(
+        `feedback-structure-${levelKey}`
+      );
+      const display = document.getElementById(`sentence-display-${levelKey}`);
+      if (feedback) {
+        feedback.textContent = "";
+        feedback.className = "feedback";
+      }
+      if (feedbackStructure) {
+        feedbackStructure.textContent = "";
+      }
+      if (display) {
+        display.textContent = "";
+      }
+    }
+
+    function getSentenceFromLevel(levelKey) {
+      const levelNumber = levelConfig[levelKey].levelNumber;
+      const slots = document.querySelectorAll(
+        `.sentence-slots[data-level="${levelNumber}"] .slot`
+      );
+      const values = [];
+      slots.forEach((slot) => {
+        values.push(slot.dataset.value || "");
+      });
+      if (values.every((v) => !v)) return "";
+      return values.join(" ").replace(" .", ".").replace(" ?", "?");
+    }
+
+    // ========= Grammar Check =========
+    function checkSentence(levelKey) {
+      const config = levelConfig[levelKey];
+      const levelNumber = config.levelNumber;
+
+      const slots = document.querySelectorAll(
+        `.sentence-slots[data-level="${levelNumber}"] .slot`
+      );
+      const [s0, s1, s2, s3, s4] = Array.from(slots);
+      const subject = s0?.dataset.value || "";
+      const verb = s1?.dataset.value || "";
+      const prep = s2?.dataset.value || "";
+      const place = s3?.dataset.value || "";
+      const punct = s4?.dataset.value || "";
+
+      const feedback = document.getElementById(`feedback-${levelKey}`);
+      const feedbackStructure = document.getElementById(
+        `feedback-structure-${levelKey}`
+      );
+      const display = document.getElementById(
+        `sentence-display-${levelKey}`
+      );
+      slots.forEach((slot) => slot.classList.remove("error", "success-glow"));
+
+      // Check all filled
+      if (!subject || !verb || !prep || !place || !punct) {
+        feedback.textContent = "❌ 句子還沒完成喔，請把每一格都填好。";
+        feedback.className = "feedback error";
+        [s0, s1, s2, s3, s4].forEach((slot) => {
+          if (!slot.dataset.value) slot.classList.add("error");
+        });
+        feedbackStructure.textContent = "";
+        display.textContent = "";
+        return;
+      }
+
+      // Start validation
+      let isCorrect = true;
+      let errorMessage = "";
+      let errorSlot = null;
+
+      // Subject rule
+      if (!grammarRules[subject]) {
+        isCorrect = false;
+        errorSlot = s0;
+        errorMessage = `主詞 "${subject}" 目前不在這一關的練習範圍內。`;
+      }
+
+      // Verb rule
+      if (isCorrect) {
+        const expectedVerb = grammarRules[subject].verb;
+        if (verb !== expectedVerb) {
+          isCorrect = false;
+          errorSlot = s1;
+          errorMessage =
+            `⚠️ 錯誤位置：動詞\n您選擇了：${verb}\n正確應該是：${expectedVerb}\n\n💡 文法提示：\n主詞 "${subject}" 要搭配 "${expectedVerb}"。`;
+        }
+      }
+
+      // Prep rule
+      if (isCorrect && prep !== "to") {
+        isCorrect = false;
+        errorSlot = s2;
+        errorMessage =
+          `⚠️ 錯誤位置：介詞\n您選擇了：${prep}\n正確應該是：to\n\n💡 文法提示：\nbe going 後面要接 "to"。`;
+      }
+
+      // Place rule
+      if (isCorrect && !config.allowedPlaces.includes(place)) {
+        isCorrect = false;
+        errorSlot = s3;
+        errorMessage =
+          "⚠️ 地點不在這一關的地點選項中，請確認是否選錯。";
+      }
+
+      // Punctuation rule
+      if (isCorrect && punct !== "." && punct !== "?") {
+        isCorrect = false;
+        errorSlot = s4;
+        errorMessage =
+          "⚠️ 標點符號錯誤，請在句尾使用句號 (.) 或問號 (?)。";
+      }
+
+      const sentence = getSentenceFromLevel(levelKey);
+      display.textContent = sentence;
+
+      if (isCorrect) {
+        feedback.textContent = "✅ 太棒了！句子完全正確！";
+        feedback.className = "feedback success";
+
+        const structureParts = [
+          `${subject} (主詞)`,
+          `${verb} (動詞)`,
+          `${prep} (介詞)`,
+          `${place} (地點)`,
+          `${punct} (標點)`,
+        ];
+        feedbackStructure.textContent =
+          "📝 文法結構分析： " + structureParts.join(" + ");
+
+        // Success animation
+        const panel = document.getElementById(
+          `sentence-panel-${levelKey}`
+        );
+        panel.classList.remove("success-glow");
+        void panel.offsetWidth; // reset animation
+        panel.classList.add("success-glow");
+
+        // Level 1 correct count & unlock Level 2
+        if (levelKey === "level1") {
+          level1CorrectCount++;
+          if (level1CorrectCount >= 3 && !level2Unlocked) {
+            level2Unlocked = true;
+            updateLevel2LockState();
+          }
+        }
+
+        // Auto speak
+        speakSentence(sentence, 1);
+      } else {
+        feedback.textContent = "❌ 這裡有個小錯誤！";
+        feedback.className = "feedback error";
+        feedbackStructure.textContent = errorMessage.replace(/\n/g, " ");
+        if (errorSlot) {
+          errorSlot.classList.add("error");
+        }
+      }
+    }
+
+    function updateLevel2LockState() {
+      const lockLabel = document.getElementById("level2-lock-label");
+      const lockMsg = document.getElementById("level2-locked-message");
+      const builder = document.getElementById("level2-builder");
+
+      if (level2Unlocked) {
+        if (lockLabel) {
+          lockLabel.textContent = "已解鎖 ✅";
+        }
+        if (lockMsg) lockMsg.style.display = "none";
+        if (builder) builder.style.display = "grid";
+      } else {
+        if (lockLabel) {
+          lockLabel.textContent = "目前：鎖定中 🔒";
+        }
+        if (lockMsg) lockMsg.style.display = "block";
+        if (builder) builder.style.display = "none";
+      }
+    }
+
+    // ========= Speech =========
+    function speakSentence(sentence, rate = 1) {
+      if (!window.speechSynthesis) {
+        console.warn("SpeechSynthesis not supported.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(sentence);
+      utter.lang = "en-US";
+      utter.rate = rate;
+      speechSynthesis.speak(utter);
+    }
+
+    function playCurrentSentence(levelKey, levelNumber, rate = 1) {
+      const sentence = getSentenceFromLevel(levelKey);
+      if (!sentence) return;
+      speakSentence(sentence, rate);
+    }
+
+    function playWordByWord(levelKey) {
+      const config = levelConfig[levelKey];
+      const levelNumber = config.levelNumber;
+      const slots = document.querySelectorAll(
+        `.sentence-slots[data-level="${levelNumber}"] .slot`
+      );
+      const words = [];
+      slots.forEach((slot) => {
+        const v = (slot.dataset.value || "").trim();
+        if (v) {
+          if (v === "." || v === "?") {
+            words.push(v);
+          } else {
+            v.split(" ").forEach((w) => words.push(w));
+          }
+        }
+      });
+      if (!words.length) return;
+      if (!window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+
+      let index = 0;
+      function speakNext() {
+        if (index >= words.length) return;
+        const u = new SpeechSynthesisUtterance(words[index]);
+        u.lang = "en-US";
+        u.rate = 0.9;
+        u.onend = () => {
+          index++;
+          speakNext();
+        };
+        speechSynthesis.speak(u);
+      }
+      speakNext();
+    }
+
+    // ========= Listening Quiz =========
+    function renderCurrentQuestion() {
+      const q = listeningQuestions[currentQuestionIndex];
+      const counter = document.getElementById("question-counter");
+      const scorePill = document.getElementById("score-pill");
+      const optionsGrid = document.getElementById("options-grid");
+      const feedback = document.getElementById("feedback-listening");
+
+      if (counter) {
+        counter.textContent = `題目 ${currentQuestionIndex + 1} / ${
+          listeningQuestions.length
+        }`;
+      }
+      if (scorePill) {
+        scorePill.textContent = `得分：${listeningScore}`;
+      }
+      if (feedback) {
+        feedback.textContent = "";
+        feedback.className = "feedback";
+      }
+      optionsGrid.innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const card = document.createElement("label");
+        card.className = "option-card";
+        card.setAttribute("data-index", idx);
+
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "listening-option";
+        radio.value = idx;
+
+        const span = document.createElement("div");
+        span.className = "option-label";
+        span.textContent = opt;
+
+        card.appendChild(radio);
+        card.appendChild(span);
+        card.addEventListener("click", () => {
+          // Ensure radio checked
+          radio.checked = true;
+        });
+        optionsGrid.appendChild(card);
+      });
+    }
+
+    function playCurrentListeningSentence(rate = 1) {
+      const q = listeningQuestions[currentQuestionIndex];
+      if (!q) return;
+      speakSentence(q.sentence, rate);
+    }
+
+    function getSelectedListeningIndex() {
+      const radios = document.querySelectorAll(
+        'input[name="listening-option"]'
+      );
+      let selected = -1;
+      radios.forEach((r) => {
+        if (r.checked) {
+          selected = Number(r.value);
+        }
+      });
+      return selected;
+    }
+
+    function checkListeningAnswer() {
+      const q = listeningQuestions[currentQuestionIndex];
+      const feedback = document.getElementById("feedback-listening");
+      const optionCards = document.querySelectorAll(".option-card");
+      optionCards.forEach((c) =>
+        c.classList.remove("correct", "wrong")
+      );
+      const selected = getSelectedListeningIndex();
+      if (selected === -1) {
+        feedback.textContent = "請先選一個答案喔。";
+        feedback.className = "feedback error";
+        return;
+      }
+
+      const correctIdx = q.correctIndex;
+      optionCards.forEach((card) => {
+        const idx = Number(card.getAttribute("data-index"));
+        if (idx === correctIdx) {
+          card.classList.add("correct");
+        }
+        if (idx === selected && idx !== correctIdx) {
+          card.classList.add("wrong");
+        }
+      });
+
+      if (selected === correctIdx) {
+        feedback.textContent = "✅ 正確！再聽一次完整句子。";
+        feedback.className = "feedback success";
+        listeningScore++;
+        document.getElementById(
+          "score-pill"
+        ).textContent = `得分：${listeningScore}`;
+        // Replay correct sentence
+        speakSentence(q.sentence, 1);
+      } else {
+        feedback.textContent = "❌ 答錯了！這是正確句子，仔細聽一次～";
+        feedback.className = "feedback error";
+        // Store wrong for review (only once)
+        if (!wrongQuestions.find((wq) => wq.id === q.id)) {
+          wrongQuestions.push({
+            id: q.id,
+            sentence: q.sentence,
+          });
+        }
+        speakSentence(q.sentence, 1);
+      }
+    }
+
+    function goToNextQuestion() {
+      const isLast =
+        currentQuestionIndex === listeningQuestions.length - 1;
+      if (!isLast) {
+        currentQuestionIndex++;
+        renderCurrentQuestion();
+      } else {
+        finishListeningQuiz();
+      }
+    }
+
+    function finishListeningQuiz() {
+      const quiz = document.getElementById("listening-quiz");
+      const result = document.getElementById("listening-result");
+      const summary = document.getElementById("listening-summary");
+      const wrongReview = document.getElementById("wrong-review");
+      const wrongList = document.getElementById("wrong-list");
+
+      if (quiz) quiz.style.display = "none";
+      if (result) result.style.display = "block";
+
+      const total = listeningQuestions.length;
+      const score = listeningScore;
+      const percent = Math.round((score / total) * 100);
+      let msg = "";
+
+      if (percent === 100) {
+        msg = "🎉 太厲害了！你是 be going to 小達人！";
+      } else if (percent >= 70) {
+        msg = "👍 很棒！再多聽幾次就更穩了。";
+      } else {
+        msg =
+          "💪 不錯的開始！多聽幾次、再挑戰一次，一定會進步。";
+      }
+
+      if (summary) {
+        summary.textContent = `總得分：${score} / ${total}（正確率 ${percent}%） · ${msg}`;
+      }
+
+      if (wrongQuestions.length) {
+        wrongReview.style.display = "block";
+        wrongList.innerHTML = "";
+        wrongQuestions.forEach((wq) => {
+          const item = document.createElement("div");
+          item.className = "wrong-item";
+          const text = document.createElement("div");
+          text.className = "wrong-text";
+          text.textContent = `第 ${wq.id} 題：${wq.sentence}`;
+          const btn = document.createElement("button");
+          btn.className = "ghost-btn";
+          btn.textContent = "🔊 再聽一次";
+          btn.addEventListener("click", () => {
+            speakSentence(wq.sentence, 1);
+          });
+          item.appendChild(text);
+          item.appendChild(btn);
+          wrongList.appendChild(item);
+        });
+      } else {
+        wrongReview.style.display = "none";
+      }
+    }
+
+    function restartListeningQuiz() {
+      currentQuestionIndex = 0;
+      listeningScore = 0;
+      wrongQuestions = [];
+
+      const quiz = document.getElementById("listening-quiz");
+      const result = document.getElementById("listening-result");
+      const feedback = document.getElementById("feedback-listening");
+      if (quiz) quiz.style.display = "flex";
+      if (result) result.style.display = "none";
+      if (feedback) {
+        feedback.textContent = "";
+        feedback.className = "feedback";
+      }
+      renderCurrentQuestion();
+    }
+
+    // ========= Init =========
+    document.addEventListener("DOMContentLoaded", () => {
+      setupDraggableWords();
+      renderCurrentQuestion();
+      updateLevel2LockState();
+    });
+  </script>
+</body>
+</html>
